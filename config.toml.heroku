@@ -1,0 +1,11 @@
+[app]
+    # Interface and port where the app will run its webserver.
+    address = "0.0.0.0:<%= ENV['PORT'] %>"
+
+[db]
+    host = "<%= URI.parse(ENV['DATABASE_URL']).host %>"
+    port = <%= URI.parse(ENV['DATABASE_URL']).port || 5432 %>
+    user = "<%= URI.parse(ENV['DATABASE_URL']).user %>"
+    password = "<%= URI.parse(ENV['DATABASE_URL']).password %>"
+    database = "<%= URI.parse(ENV['DATABASE_URL']).path.gsub(/^\//, '') %>"
+    ssl_mode = "require"

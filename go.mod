@@ -1,3 +1,4 @@
+// +heroku goVersion 1.13
 module github.com/knadh/listmonk
 
 go 1.13
